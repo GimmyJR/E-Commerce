@@ -1,0 +1,38 @@
+﻿@{
+    var publishableKey = ViewBag.PublishableKey;
+}
+
+<h2>Payment</h2>
+<form id="payment-form">
+    <div id="card-element"></div>
+    <button id="submit-button">Pay @ViewBag.Amount</button>
+</form>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+    var stripe = Stripe('@publishableKey');
+    var elements = stripe.elements();
+    var card = elements.create('card');
+    card.mount('#card-element');
+
+    var form = document.getElementById('payment-form');
+    form.addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        const {paymentIntent, error} = await stripe.confirmCardPayment('@ViewBag.ClientSecret', {
+            payment_method: {
+                card: card,
+                billing_details: {
+                    name: 'Customer Name'
+                }
+            }
+        });
+
+        if (error) {
+            console.log(error.message);
+        } else {
+            console.log('Payment successful');
+            window.location.href = "/Payment/Success";
+        }
+    });
+</script>

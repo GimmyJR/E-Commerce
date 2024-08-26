@@ -1,0 +1,21 @@
+﻿@model List<E_Commerce.Models.Category>
+@{
+    ViewData["Title"] = "GetAll";
+}
+
+<h1 class="page-title">All Categories</h1>
+
+<div class="card-container">
+    @foreach (var item in Model)
+    {
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Name</h5>
+                    <p class="card-id">Category ID: @item.Id</p>
+                </div>
+            </div>
+    }
+</div>
+
+<link href="/css/getCat.css" rel="stylesheet" />
+

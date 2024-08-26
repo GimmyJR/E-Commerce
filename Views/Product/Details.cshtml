@@ -1,0 +1,63 @@
+﻿@model E_Commerce.Models.Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="product-title">Product Details</h1>
+
+<div class="product-container">
+    <div class="product-card">
+        <div class="product-image">
+            <img src="/upload/@Model.ImageUrl" class="card-img-top" alt="Product Image">
+        </div>
+        <div class="product-details">
+            <h4>@Model.Name</h4>
+            <dl class="product-info">
+                <dt class="product-label">
+                    @Html.DisplayNameFor(model => model.Description)
+                </dt>
+                <dd class="product-value">
+                    @Html.DisplayFor(model => model.Description)
+                </dd>
+                <dt class="product-label">
+                    @Html.DisplayNameFor(model => model.Price)
+                </dt>
+                <dd class="product-value">
+                    $@Html.DisplayFor(model => model.Price)
+                </dd>
+                <dt class="product-label">
+                    @Html.DisplayNameFor(model => model.StockQuantity)
+                </dt>
+                <dd class="product-value">
+                    @Html.DisplayFor(model => model.StockQuantity) available
+                </dd>
+                <dt class="product-label">
+                    @Html.DisplayNameFor(model => model.Category)
+                </dt>
+                <dd class="product-value">
+                    @Html.DisplayFor(model => model.Category)
+                </dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="product-actions">
+        @if (User.IsInRole("Admin"))
+        {
+                <form asp-controller="Product" asp-action="DeleteProduct" asp-route-id="@Model.Id" method="post" class="d-inline" onsubmit="return confirmDeletion(event);">
+                    <button type="submit" class="btn btn-danger">Delete Product</button>
+                </form>
+        }
+        else
+        {
+                <a asp-controller="Cart" asp-action="AddToCart" asp-route-productId="@Model.Id" asp-route-quantity="1" class="btn btn-primary">Add to Cart</a>
+                <a asp-controller="CheckOut" asp-action="CheckOut" asp-route-productID="@Model.Id" class="btn btn-success">Buy Now</a>
+        }
+    </div>
+    <div class="back-to-list">
+        <a asp-controller="Product" asp-action="GetAll" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>
+
+<link href="/css/detailsStyles.css" rel="stylesheet" />

@@ -1,0 +1,39 @@
+﻿@model E_Commerce.Models.UserProfileViewModel
+
+@{
+    ViewData["Title"] = "ShowProfile";
+}
+
+<h1 class="profile-header">My Profile</h1>
+
+<div class="profile-container">
+    <div class="profile-card">
+        <h4>User Information</h4>
+        <hr />
+        <dl class="profile-details">
+            <dt class="profile-label">
+                @Html.DisplayNameFor(model => model.UserName)
+            </dt>
+            <dd class="profile-value">
+                @Html.DisplayFor(model => model.UserName)
+            </dd>
+            <dt class="profile-label">
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+            <dd class="profile-value">
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+            <dt class="profile-label">
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </dt>
+            <dd class="profile-value">
+                @Html.DisplayFor(model => model.PhoneNumber)
+            </dd>
+        </dl>
+    </div>
+    <div class="profile-actions">
+        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }, new { @class = "btn btn-primary" }) |
+         <a asp-controller="Product" asp-action="GetAll" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>
+<link href="/css/profileStyles.css" rel="stylesheet" />

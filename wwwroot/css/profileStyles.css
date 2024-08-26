@@ -1,0 +1,130 @@
+﻿/* Ensure full height for html and body */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Wrapper to push the footer down */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
+}
+
+/* Main container to flex and push footer */
+.container {
+    flex: 1;
+}
+
+/* Footer styling */
+footer {
+    background-color: #343a40; /* Example background color */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Styling for footer links and social media */
+.footer-links, .social-media {
+    margin: 0;
+    padding: 0;
+}
+
+    .footer-links a, .social-media a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+
+        .footer-links a:hover, .social-media a:hover {
+            text-decoration: underline;
+        }
+
+/* Profile header styling */
+.profile-header {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Profile container styling */
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* Profile card styling */
+.profile-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+    .profile-card h4 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: #555;
+    }
+
+/* Profile details styling */
+.profile-details {
+    margin-top: 20px;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.profile-value {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* Profile actions styling */
+.profile-actions {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Button styling */
+.btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+}
+
+    .btn-secondary:hover {
+        background-color: #5a6268;
+    }

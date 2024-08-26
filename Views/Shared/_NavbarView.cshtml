@@ -1,0 +1,164 @@
+﻿<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+      <img id="MDB-logo" src="/images/gimmyjr.png" alt="MDB Logo" draggable="false" height="30" />
+    </a>
+    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            @if (User.IsInRole("Admin"))
+            {
+                    <ul class="navbar-nav me-3">
+                        <li class="nav-item">
+                            <a class="nav-link active d-flex align-items-center" aria-current="page" asp-controller="Role" asp-action="NewRole"><i class="fas fa-bars pe-2"></i>Add Role</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav me-3">
+                        <li class="nav-item">
+                            <a class="nav-link active d-flex align-items-center" aria-current="page" asp-controller="Account" asp-action="AddAdmin"><i class="fas fa-bars pe-2"></i>Add Admin</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav me-3">
+                        <li class="nav-item">
+                            <a class="nav-link active d-flex align-items-center" aria-current="page" asp-controller="Category" asp-action="AddCategory"><i class="fas fa-bars pe-2"></i>Add Category</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav me-3">
+                        <li class="nav-item">
+                            <a class="nav-link active d-flex align-items-center" aria-current="page" asp-controller="Product" asp-action="AddProduct"><i class="fas fa-bars pe-2"></i>Add Product</a>
+                        </li>
+                    </ul>
+                        <ul class="navbar-nav me-3">
+                            <li class="nav-item">
+                                        <a class="nav-link active d-flex align-items-center" aria-current="page" asp-controller="Product" asp-action="Delete"><i class="fas fa-bars pe-2"></i>Delete Product</a>
+                            </li>
+                        </ul>
+                    <ul class="navbar-nav me-3">
+                        <li class="nav-item">
+                            <a class="nav-link active d-flex align-items-center" aria-current="page" asp-controller="Product" asp-action="GetAll"><i class="fas fa-bars pe-2"></i>Products</a>
+                        </li>
+                    </ul>
+                    <form id="searchForm" class="d-flex align-items-center w-100 form-search width: 65px;" onsubmit="return false;" >
+                    <div class="input-group">
+
+                        <ul class="dropdown-menu dropdown-menu-dark fa-ul" id="dropdownMenu">
+                            <!-- Dropdown items will be populated here -->
+                        </ul>
+                        <input type="search" id="searchInput" name="query" class="form-control" placeholder="Search" aria-label="Search" oninput="filterDropdown()" required />
+                    </div>
+                    </form>
+                @if (User.Identity.IsAuthenticated == false)
+                {
+                       <ul class="navbar-nav me-3">
+                          <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center" asp-controller="Account" asp-action="Login">Sign In</a>
+                          </li>
+                        </ul>
+                }
+                else
+                {
+                        <ul class="navbar-nav me-3">
+                           <li class="nav-item">
+                              <a class="nav-link d-flex align-items-center" asp-controller="Account" asp-action="ShowProfile">Profile</a>
+                           </li>
+                        </ul>
+                         <ul class="navbar-nav me-3">
+                            <li class="nav-item">
+                               <a class="nav-link d-flex align-items-center" asp-controller="Account" asp-action="Logout">Sign out</a>
+                            </li>
+                        </ul>
+                }
+            }
+            else
+            {
+                    <ul class="navbar-nav me-3">
+                        <li class="nav-item">
+                            <a class="nav-link active d-flex align-items-center" aria-current="page" asp-controller="Product" asp-action="GetAll"><i class="fas fa-bars pe-2"></i>Products</a>
+                        </li>
+                    </ul>
+
+                    <form id="searchForm" class="d-flex align-items-center w-100 form-search" onsubmit="return false;">
+                        <div class="input-group">
+
+                            <ul class="dropdown-menu dropdown-menu-dark fa-ul" id="dropdownMenu">
+                                <!-- Dropdown items will be populated here -->
+                            </ul>
+                            <input type="search" id="searchInput" name="query" class="form-control" placeholder="Search" aria-label="Search" oninput="filterDropdown()" required />
+                        </div>
+                    </form>
+
+                    <ul class="navbar-nav ms-3">
+                        <li class="nav-item me-3">
+                            <a class="nav-link d-flex align-items-center" asp-controller="Order" asp-action="GetAll">Orders</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center me-3" asp-controller="Cart" asp-action="Index">
+                                <i class="fas fa-bookmark pe-2"></i> Cart
+                            </a>
+                        </li>
+                    @if (User.Identity.IsAuthenticated == false)
+                    {
+                                <li class="nav-item" style="width: 65px;">
+                                    <a class="nav-link d-flex align-items-center" asp-controller="Account" asp-action="Login">Sign In</a>
+                                </li>
+                    }
+                    else
+                    {
+                                <li class="nav-itemm" style="width: 65px;">
+                                    <a class="nav-link d-flex align-items-center" asp-controller="Account" asp-action="ShowProfile">Profile</a>
+                                </li>
+                                <li class="nav-itemm" style="width: 65px;">
+                                    <a class="nav-link d-flex align-items-center" asp-controller="Account" asp-action="Logout">Sign out</a>
+                      </li>
+                    }
+          </ul>
+            }
+    </div>
+  </div>
+</nav>
+<!-- Navbar -->
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/Navbar.css" />
+
+<script>
+  function filterDropdown() {
+    var input, filter, xhr;
+    input = document.getElementById('searchInput');
+    filter = input.value;
+
+    var dropdownMenu = document.getElementById('dropdownMenu');
+
+    if (filter.length === 0) {
+      dropdownMenu.classList.remove('show');
+      return;
+    }
+
+    // AJAX request to the server
+    xhr = new XMLHttpRequest();
+    xhr.open('GET', '/Product/Search?query=' + encodeURIComponent(filter), true);
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        var items = JSON.parse(xhr.responseText);
+        populateDropdown(items);
+        dropdownMenu.classList.add('show');
+      }
+    };
+    xhr.send();
+  }
+
+  function populateDropdown(items) {
+    var menu = document.getElementById('dropdownMenu');
+    menu.innerHTML = ''; // Clear existing items
+    items.forEach(function(item) {
+      var a = document.createElement('a');
+      a.classList.add('dropdown-item');
+      a.href = '/Product/Details?productId=' + item.id; // Link to the Details action with productId
+      a.textContent = item.name; // Display the product name
+      menu.appendChild(a);
+    });
+  }
+</script>
+

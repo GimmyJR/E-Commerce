@@ -1,0 +1,82 @@
+﻿
+.page-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #dc3545;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #333;
+}
+
+.form-control {
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.btn-danger {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2em;
+    border-radius: 5px;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+/* Ensure full height for html and body */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Wrapper to push the footer down */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
+}
+
+.container {
+    flex: 1;
+}
+
+/* Footer styling */
+footer {
+    background-color: #343a40; /* Example background color */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Styling for footer links and social media */
+.footer-links, .social-media {
+    margin: 0;
+    padding: 0;
+}
+
+    .footer-links a, .social-media a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+
+        .footer-links a:hover, .social-media a:hover {
+            text-decoration: underline;
+        }
+
+

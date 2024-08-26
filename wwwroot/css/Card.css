@@ -1,0 +1,253 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #e6e6e6;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between the product boxes */
+    max-width: 1200px;
+    width: 100%;
+    justify-content: center; /* Center-align items */
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 350px; /* Adjust as needed */
+    margin: 10px; /* Space around each box */
+    display: inline-block;
+}
+
+.image-box {
+    position: relative;
+    overflow: hidden;
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.info {
+    padding: 15px;
+    text-align: center;
+}
+
+    .info .brand {
+        font-size: 16px;
+        font-weight: 600;
+        color: #c9032e;
+    }
+
+    .info .name {
+        font-size: 18px;
+        font-weight: 500;
+        color: #000;
+        margin: 10px 0;
+    }
+
+    .info .price {
+        font-size: 20px;
+        font-weight: 500;
+        color: #fc6989;
+    }
+
+.details {
+    padding: 15px;
+}
+
+    .details .topic {
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+    .details p {
+        color: #737373;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+.rating {
+    font-size: 14px;
+    color: #fd9bb0;
+}
+
+.button1 {
+    padding: 15px;
+    text-align: center;
+}
+
+    .button1 button,
+    .button1 a {
+        margin: 5px;
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #fff;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .button1 .btn-primary {
+        background: #00e6e6;
+    }
+
+    .button1 .btn-success {
+        background: #28a745;
+    }
+
+    .button1 .btn-info {
+        background: #17a2b8;
+    }
+
+    .button1 .btn-danger {
+        background: #dc3545;
+    }
+
+    .button1 button:hover,
+    .button1 a:hover {
+        opacity: 0.9;
+    }
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/* Navbar Styles */
+.navbar {
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+    .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: 600;
+    color: #c9032e;
+    text-decoration: none;
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar-nav li {
+    display: inline;
+}
+
+.navbar-nav a {
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.navbar-nav a:hover {
+    background: #f0f0f0;
+    color: #c9032e;
+}
+
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 15px 20px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links a,
+.social-media a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+    .footer-links a:hover,
+    .social-media a:hover {
+        color: #00e6e6;
+    }
+
+.footer-links {
+    display: flex;
+}
+
+.social-media {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links,
+    .social-media {
+        margin: 10px 0;
+    }
+
+        .footer-links a,
+        .social-media a {
+            margin: 5px 10px;
+        }
+}
+
+
+

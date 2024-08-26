@@ -1,0 +1,55 @@
+﻿@model E_Commerce.Models.Cart
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Your Shopping Cart</h2>
+
+@if (Model.CartItems.Any())
+{
+        <div class="cart-container">
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in Model.CartItems)
+                {
+                            <tr>
+                                <td>@item.Product.Name</td>
+                                <td>@item.Quantity</td>
+                                <td>$@item.Product.Price</td>
+                                <td>$@(item.Product.Price * item.Quantity)</td>
+                                <td>
+                                    <a asp-action="RemoveFromCart" asp-route-productId="@item.ProductId" class="btn btn-danger btn-sm">Remove</a>
+                                </td>
+                                <td>
+                                    <a asp-controller="CheckOut" asp-action="CheckOut" asp-route-productID="@item.ProductId" class="btn btn-primary btn-sm">Buy</a>
+                                </td>
+                            </tr>
+                }
+                </tbody>
+            </table>
+            <div class="cart-total">
+                <h3>Total: $@(Model.CartItems.Sum(ci => ci.Product.Price * ci.Quantity))</h3>
+            </div>
+            <div class="cart-actions">
+                <a asp-controller="Product" asp-action="GetAll" class="btn btn-secondary">Continue Shopping</a>
+                <a asp-controller="CheckOut" asp-action="CheckOutAll" class="btn btn-success">Proceed to Checkout</a>
+            </div>
+        </div>
+}
+else
+{
+        <p>Your cart is empty.</p>
+}
+
+<link href="/css/cartStyles.css" rel="stylesheet" />

@@ -1,0 +1,47 @@
+﻿.order-container {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+    .order-table thead {
+        background-color: #343a40;
+        color: #fff;
+    }
+
+    .order-table th, .order-table td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    .order-table tbody tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    .order-table .btn {
+        margin-right: 5px;
+    }
+
+.back-to-list {
+    margin-top: 20px;
+}
+
+    .back-to-list .btn {
+        background-color: #343a40;
+        color: #fff;
+    }
+
+        .back-to-list .btn:hover {
+            background-color: #495057;
+            color: #fff;
+        }

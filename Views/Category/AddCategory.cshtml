@@ -1,0 +1,36 @@
+﻿@model E_Commerce.Models.Category
+
+@{
+    ViewData["Title"] = "AddCategory";
+}
+
+<h1 class="form-title">Add Category</h1>
+
+<hr />
+<div class="form-container">
+    <div class="form-card">
+        <form asp-action="AddCategory">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="back-link">
+    <a asp-action="GetAll" class="btn btn-secondary">View All Categories</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+<link href="/css/addCategoryStyles.css" rel="stylesheet" />
+

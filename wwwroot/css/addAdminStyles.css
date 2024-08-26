@@ -1,0 +1,93 @@
+﻿/* Form Title Styling */
+.form-title {
+    text-align: center;
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form Container Styling */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+/* Form Card Styling */
+.form-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Form Control Styling */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+}
+
+    .form-control:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+/* Button Primary Styling */
+.btn-primary {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+/* Text Danger Styling */
+.text-danger {
+    color: #dc3545;
+    font-size: 0.9em;
+}
+
+footer {
+    background-color: #343a40; /* Background color for the footer */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Styling for footer links */
+.footer-links a, .social-media a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+    /* Footer links hover effect */
+    .footer-links a:hover, .social-media a:hover {
+        text-decoration: underline;
+    }
+
+/* Footer sections styling */
+.footer-links, .social-media {
+    margin: 0;
+    padding: 0;
+}

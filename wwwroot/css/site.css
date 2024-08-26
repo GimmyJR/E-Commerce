@@ -1,0 +1,115 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+/* Hero Section */
+.hero {
+    background: url('https://www.lopesan.com/blog/wp-content/uploads/2024/05/Where-to-go-shopping-in-Gran-Canaria.jpg') no-repeat center center/cover;
+    color: #fff;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+    .hero h1 {
+        font-size: 48px;
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .hero .btn {
+        background: #ff5722;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+/* Categories Section */
+.categories, .best-sellers, .latest-arrivals, .newsletter {
+    padding: 20px;
+    text-align: center;
+}
+
+    .categories h2, .best-sellers h2, .latest-arrivals h2, .newsletter h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+.category-list, .product-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.category-item, .product-item {
+    background: #f4f4f4;
+    padding: 20px;
+    width: 23%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Newsletter Section */
+.newsletter form {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.newsletter input[type="email"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+}
+
+.newsletter button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+    footer .footer-links a {
+        color: #fff;
+        margin: 0 10px;
+        text-decoration: none;
+    }
+
+    footer .social-media a {
+        color: #fff;
+        margin: 0 10px;
+        text-decoration: none;
+    }

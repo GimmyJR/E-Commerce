@@ -1,0 +1,58 @@
+﻿@model E_Commerce.Models.RegisterVM
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = null;
+}
+
+<div class="container">
+    <div class="title">Register</div>
+    <div class="content">
+        <form asp-action="Register">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Full Name</span>
+                    <input asp-for="UserName" class="form-control" placeholder="Enter your name" required>
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+                <div class="input-box">
+                    <span class="details">Email</span>
+                    <input asp-for="Email" class="form-control" placeholder="Enter your email" required>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="input-box">
+                    <span class="details">Phone Number</span>
+                    <input asp-for="PhoneNumber" class="form-control" placeholder="Enter your number" required>
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div>
+                <div class="input-box">
+                    <span class="details">Password</span>
+                    <input asp-for="Password" class="form-control" placeholder="Enter your password" required>
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="input-box">
+                    <span class="details">Confirm Password</span>
+                    <input asp-for="ConfrimPassword" class="form-control" placeholder="Confirm your password" required>
+                    <span asp-validation-for="ConfrimPassword" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="button">
+                <input type="submit" value="Register">
+            </div>
+        </form>
+        <div class="switch-form">
+            <span>Already have an account?</span>
+            <a asp-controller="Account" asp-action="Login">Log in</a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<link href="/css/SignUp.css" rel="stylesheet" />
+
